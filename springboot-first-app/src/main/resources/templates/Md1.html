@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Form</title>
+	<style> 
+body{
+	margin:0;
+	padding:0;
+	background-image:url(LoginBackgroundimage.jpg);
+	background-size: cover;  
+}
+.container{
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%,-50%);
+}
+.card{
+	padding: 60px 40px 50px 40px;
+	background: rgb(50,50,50);
+	border-radius: 10px;
+}
+
+#name{
+	width: 200px;
+	border: none;
+	background: transparent;
+	border-bottom: 1px solid white;
+	padding: 6px;
+	margin-bottom: 20px;
+	color: white;
+
+}
+#button{
+	border-radius: 20px;
+	padding: 10px 20px;
+	background: dodgerblue;
+	color: white;
+	margin-top: 20px;
+	border: none;
+	outline: none;
+	margin-left: 50px;
+
+}
+h1{
+	color: white;
+}
+img{
+	border-radius: 50%;
+	position: absolute;
+	margin-left: 100px;
+	margin-top: -40px;
+}
+#button:hover{
+	background-color: greenyellow;
+	color: black;
+	cursor: pointer;
+}
+</style>
+</head>
+<body>
+	<h1  style="text-align:center">Login Page</h1>
+	<form th:action="@{/save-project}" th:object="${project}" method="post">
+<div class="container">
+	<img src="userimg.jpg" height="70" width="70">
+	<div class="card">
+	<input type="text" placeholder="Username" id="name" required th:field="*{usname}"><br>
+		<input type="password" placeholder="Password" id="name" required th:field="*{psword}><br>
+			<input type="submit" value="Submit" id="button"><br>
+	</div>
+</div>
+</form>
+</body>
+</html>
